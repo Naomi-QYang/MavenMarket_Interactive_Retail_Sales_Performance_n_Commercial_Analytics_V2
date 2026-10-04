@@ -4,38 +4,36 @@ A Power BI portfolio project analysing *sales performance, customer behaviour, p
 ⛏️**Tools:** Power BI | DAX & Visual Calculation | Power Query | Data Modelling | Time Intelligence | Business Analysis
 
 ## ⭐ Project Overview
-This project analyses the performance of Maven Market, a multi-national grocery chain with stores across Canada, Mexico and the US.
+This project explores and analyses the performance of Maven Market, a multi-national grocery chain with stores across Canada, Mexico and the US.
 
-The report was designed from a FP&A and commercial analytics perspective, with the objective of moving beyond descriptive reporting to identify the key drivers behind changes in *Sales, Customer behaviour, Products and Stores Performance*. It allows users to move from an executive-level view into detailed store, product and customer analysis through interactive slicers, dynamic measures and drill-through functionality.
+The report combines financial and commercial analysis with the objective of moving beyond descriptive reporting to identify the key drivers behind changes in *Sales, Customer behaviour, Products and Stores Performance* and support *data-driven* decision making. It allows users to move from an executive-level view into detailed store, product and customer analysis through interactive slicers, dynamic measures and drill-through functionality.
 
 ## 🎯 Business Objectives
 The report was developed to help managers answer 4 key questions:
 
 ***1. How is the business performing?***
- * How are sales, transactions trending?
+ * How are sales performing across different time periods, regions and store channels?
  * How does current performance compare with the same period last year?
- * What is the driving changes in sales revenue?
  * How are gross margin and return rate changing?
+ * What are the key drivers behind sales growth/decline?
+ * Which store channels and product categories contribute the most to overall sales?
+ * How does sales performance change across YoY, QoQ and MoM periods?
+ * What is the sales performing expected to be in the next 3 periods?
 
-***2. Which drivers contribute the performance?***
- * Which regions and store types contribute the most sales?
- * Which stores are outperforming or underperforming?
- * Which product brands generate the most sales revenue?
- * Which areas or anomalies require further investigation?
-
-***3. What drives customer behaviour?***
+**2. What drives customer behaviour?***
+ * Who are the most valuable and most active customers?
  * How many customers actively making transactions?
- * What percentage of active customers made purchases more than 1 time?
  * How many customers have returned after being inactive 90+days?
+ * What proportion of customers make repeat purchases across different time period?
  * Is customer engagement improving or deteriorating?
  * How does Average Order Value change alongside customer and transaction growth during weekday and weekend?
 
-***4. Where are the commercial opportunities and risks?***
- * Which products generate high revenue and high margins?
- * Which products are slow-moving?
+***3. Where are the commercial opportunities and risks?***
+ * Which kind of products contribute the most and at the same time move fast?
+ * Which kind of products are growing/decling?
+ * How many product SKUs is actively selling, compared with the number of products SKUs lost sale, across different time periods?
  * Which products have higher return rates while low sales?
- * Are changes in customer retention associated with changes in product returns?
- * Which stores, regions or products should be investigated further?
+ * Which product SKUs/Categories are frequently purchased together? And which product combinations have the strongest affinity?
 
 ## 🛠️ Key Techniques
 The report was built by using the following tools and technologies:
@@ -48,9 +46,11 @@ The report was built by using the following tools and technologies:
    - 🧐*Report Interactions* - an interactive analytical experience with drill-through, cross-visual interactions, bookmarks and page nagvigation
 
  * 🕵️ **Key Analytical Methods:**
-   - 🏆*Top/Bottom N Analysis* - identify highes/lowest performing stores, products or brands
+   - 🏆*Top/Bottom N Analysis* - identify highes/lowest performing stores, products or categories
    - 📅*Time Intelligence* - analyse business growth trends to support performance evaluation and decision-making
    - ⚖️*Pareto Analysis* - identify the store types that drive the majority of sales (opportunity) / returns (risks), supporting more targeted resource allocation and performance management
+   - ✨*BCG-Style Matrix* - identify products that are strong performers, stable revenue contributors , growth opportunities or potential underperformers
+   - 🛍️*Basket Analysis* - analyse product affinity and co-purchase behaviour to identify potential cross-selling opportunities and support sales strategies planning
 
 ## 💾 Data Source
 This data is from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the US, including daily transactions data and returns data, details on their 10,281 customers, 1,560 products and 24 stores.
@@ -64,7 +64,7 @@ The transactional data covers the period from *<ins> 1 January 1997 </ins>* to *
    - *Overview* - provides a high-level overview of business performance in the latest period (year/quarter/month)
    - *Sales Performance* - provides a detailed-level sales performance movement over year/quarter/month
  * **Customers Analytics:** focuses on customer activity, retention and purchasing behaviour. One of the key analytical areas is the relationship between *Reactivated Customers* and *Dormant Customers*. For example, a declining reactivated Customers combined with a increasing dormant customers might suggest that greater difficulty in retaining its existing customer base.
- * **Product Performance:** analyses the performance on each product and brand from both sales and profitability perspectives. The dataset does not provide a formal product category hierarchy. Therefore, product analysis is primarily performed at the brand level, with drill-down to individual product SKUs related to  selected product brands where appropriate
+ * **Product Performance:** analyses the performance on each product SKUs and categories from both sales and profitability perspectives. The dataset does not provide a formal product category hierarchy. Therefore, product analysis is primarily performed at the brand level, with drill-down to individual product SKUs related to  selected product brands where appropriate
  *  **Store Performance:** focuses on sales and operational perfomance on store-level and type-level. Store types and regions can be further investigated through drill-through analysis.
 
 ## ⚠️ Data Assumptions & Limitations
