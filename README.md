@@ -1,4 +1,4 @@
-# MavenMarket_Retail_Sales_Performance_Analytics_Version2
+# Maven Market Interactive Retail Sales Performance and Commercial Analytics
 A Power BI portfolio project analysing *sales performance, customer behaviour, product profitability and store performance* for a multi-national grocery retailer.
 
 ⛏️**Tools:** Power BI | DAX & Visual Calculation | Power Query | Data Modelling | Time Intelligence | Business Analysis
