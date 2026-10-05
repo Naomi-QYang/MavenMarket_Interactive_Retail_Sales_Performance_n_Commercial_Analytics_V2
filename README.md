@@ -57,19 +57,19 @@ This data is from Maven Market, a multi-national grocery chain with locations in
 
 <a href="https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/?couponCode=26BBPAA2MX"> Data Source </a>
 
-***Date Transformation:***
+* **Date Transformation:**
 The original data of Transaction and Returns covers the period from *<ins> 1 January 1997 </ins>* to *<ins> 31 December 1998 </ins>*. The date fields is shifted and extended to cover from *<ins> 1 January 2024 </ins>* to *<ins> 31 December 2025 </ins>* across fact and dimension tables to align the dataset with the current reporting period and enable realistic relative-date calculations.
 
-**Transaction Definition:***
+* **Transaction Definition:**
 The transaction table does not contain a transaction/order ID. A order ID is created on each transaction line in the format of "**C**[5 digits Customer ID]**S**[2 digits Store ID]**D**[8 digits date in DDMMYYYY]". Therefore, transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction for the purpose of transaction-based analysis.
 
-***Product Categorisation:***
+* **Product Categorisation:**
 The original product data does not contain product category information. A product hierarchy was therefore created by:
- - Extracting product names from the full product name by removing the product brand to consolidate 1,560 unique product full names into 311 unique product names
- - Creating a new table via Power Query with 311 distinct product names
- - Manually creating a mapping list with keywords and the according product subcategory
- - Assigning each product name to its relative subcategory according to the mapping list
- - Grouping subcategories into main categories
+  - Extracting product names from the full product name by removing the product brand to consolidate 1,560 unique product full names into 311 unique product names
+  - Creating a new table via Power Query with 311 distinct product names
+  - Manually creating a mapping list with keywords and the according product subcategory
+  - Assigning each product name to its relative subcategory according to the mapping list
+  - Grouping subcategories into main categories
 
 ## 📊 Report Structure
  * **Executive Summary:** intentionally designed as the entry point into the detailed analysis page. The objective is designed to help decision-makers quickly identify <ins>what happened</ins> and <ins>where did it happen</ins>.
