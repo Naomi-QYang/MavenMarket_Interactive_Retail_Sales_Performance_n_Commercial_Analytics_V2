@@ -1,12 +1,12 @@
 # Maven Market Interactive Retail Sales Performance and Commercial Analytics
-A Power BI portfolio project analysing *sales performance, customer behaviour, product profitability and store performance* for a multi-national grocery retailer.
+A Power BI analytics project analysing *sales performance, customer behaviour, product profitability and store performance* for a multi-national grocery retailer with stores across Canada, Mexico and the US.
 
 ⛏️**Tools:** Power BI | DAX & Visual Calculation | Power Query | Data Modelling | Time Intelligence | Business Analysis
 
 ## ⭐ Project Overview
-This project explores and analyses the performance of Maven Market, a multi-national grocery chain with stores across Canada, Mexico and the US.
+This project is built on the Maven Market grocery retail dataset, designed to demonstrate how sales, customer, product and store data can be transformed into actionable commercial insights.
 
-The report combines financial and commercial analysis with the objective of moving beyond descriptive reporting to identify the key drivers behind changes in *Sales, Customer behaviour, Products and Stores Performance* and support *data-driven* decision making. It allows users to move from an executive-level view into detailed store, product and customer analysis through interactive slicers, dynamic measures and drill-through functionality.
+The report combines financial and commercial analysis with the objective of moving beyond descriptive reporting to identify the key drivers behind changes in *Sales, Customer behaviour, Products and Stores Performance* and to support *data-driven* decision making. It allows users to move from an executive-level view into detailed store, product and customer analysis through interactive slicers, dynamic measures and drill-through functionality.
 
 ## 🎯 Business Objectives
 The report was developed to help managers answer 4 key questions:
@@ -47,9 +47,9 @@ The report was built by using the following tools and technologies:
 
  * 🕵️ **Key Analytical Methods:**
    - 🏆*Top/Bottom N Analysis* - identify highes/lowest performing stores, products or categories
-   - 📅*Time Intelligence* - analyse business growth trends to support performance evaluation and decision-making
-   - ⚖️*Pareto Analysis* - identify the store types that drive the majority of sales (opportunity) / returns (risks), supporting more targeted resource allocation and performance management
-   - ✨*BCG-Style Matrix* - identify products that are strong performers, stable revenue contributors , growth opportunities or potential underperformers
+   - 📅*Time Intelligence* - analyse business growth trends to support performance evaluation and decision-making. It allows users to switch between Year, Quarter and Month on the <ins>Executive Dashboard</ins> page, and between Last 8 Quarters (quarter granular), Last 12 Months (month granular), Last 13 Weeks (week granular) and Last 30 Days (day granular) on the detailed <ins>Customers, Products and Stores</ins> pages.
+   - ⚖️*Pareto Analysis* - identify product categories/store types that drive the majority of sales (opportunity) / returns (risks), supporting more targeted resource allocation and performance management
+   - ✨*BCG-Style Matrix* - identify products that are strong performers, stable revenue contributors, growth opportunities or potential underperformers, by <ins>Growth Rate X Sales Contribution</ins> with a percentile slicer to control the classification boundaries interactively
    - 🛍️*Basket Analysis* - analyse product affinity and co-purchase behaviour to identify potential cross-selling opportunities and support sales strategies planning
 
 ## 💾 Data Source
@@ -57,28 +57,47 @@ This data is from Maven Market, a multi-national grocery chain with locations in
 
 <a href="https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/?couponCode=26BBPAA2MX"> Data Source </a>
 
-The transactional data covers the period from *<ins> 1 January 1997 </ins>* to *<ins> 31 December 1998 </ins>*. The date fields is shifted and extended across fact and dimension tables to align the dataset with the current reporting period and enable realistic relative-date calculations.
+***Date Transformation:***
+The original data of Transaction and Returns covers the period from *<ins> 1 January 1997 </ins>* to *<ins> 31 December 1998 </ins>*. The date fields is shifted and extended to cover from *<ins> 1 January 2024 </ins>* to *<ins> 31 December 2025 </ins>* across fact and dimension tables to align the dataset with the current reporting period and enable realistic relative-date calculations.
+
+**Transaction Definition:***
+The transaction table does not contain a transaction/order ID. A order ID is created on each transaction line in the format of "**C**[5 digits Customer ID]**S**[2 digits Store ID]**D**[8 digits date in DDMMYYYY]". Therefore, transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction for the purpose of transaction-based analysis.
+
+***Product Categorisation:***
+The original product data does not contain product category information. A product hierarchy was therefore created by:
+ - Extracting product names from the full product name by removing the product brand to consolidate 1,560 unique product full names into 311 unique product names
+ - Creating a new table via Power Query with 311 distinct product names
+ - Manually creating a mapping list with keywords and the according product subcategory
+ - Assigning each product name to its relative subcategory according to the mapping list
+ - Grouping subcategories into main categories
 
 ## 📊 Report Structure
- * **Executive Summary:** intentionally designed as the entry point into the detailed analysis page. The objective is to answer <ins>what happened</ins> and <ins>where did it happen</ins>
+ * **Executive Summary:** intentionally designed as the entry point into the detailed analysis page. The objective is designed to help decision-makers quickly identify <ins>what happened</ins> and <ins>where did it happen</ins>.
    - *Overview* - provides a high-level overview of business performance in the latest period (year/quarter/month)
    - *Sales Performance* - provides a detailed-level sales performance movement over year/quarter/month
- * **Customers Analytics:** focuses on customer activity, retention and purchasing behaviour. One of the key analytical areas is the relationship between *Reactivated Customers* and *Dormant Customers*. For example, a declining reactivated Customers combined with a increasing dormant customers might suggest that greater difficulty in retaining its existing customer base.
- * **Product Performance:** analyses the performance on each product SKUs and categories from both sales and profitability perspectives. The dataset does not provide a formal product category hierarchy. Therefore, product analysis is primarily performed at the brand level, with drill-down to individual product SKUs related to  selected product brands where appropriate
- *  **Store Performance:** focuses on sales and operational perfomance on store-level and type-level. Store types and regions can be further investigated through drill-through analysis.
+ * **Customers Analytics:** focuses on customer activity, engagement and lifetime value. One of the key analytical areas is to identify inactive, one-off reactivated, successfully reactivated and dormant customers by using a 90-day customer activity framework. This enables the report to move beyond simple customer counts and investigate customer retention and re-engagement opportunities.
+ * **Product Performance:** supports dynamic time-period analysis using selectable time granularities and rolling periods.
+   - *Trend* - analyses the performance on each product SKUs and product categories from both sales and profitability perspectives, and classifies product categories/brands into ⭐**Star**, 🐄 **Cash Cow**, ❓ **Question Mark** and 🐕 **Dog** which driven by Sales contribution, Growth Rate and user-selected percentile thresholds. This allows users to explore how the product portfolio changes under different assumptions.
+   - *Comparison* - compare performance against same period last year, product categories, and combination of each set of product categories
+   - *Basket Analysis* - analyses product subcategories/main categories frequently purchased together to identify potential product associations, which can be used to identify potential opportunities for cross-selling, product bundling and promotional planning.
+ *  **Store Performance:** evaluates performance across individual stores, regions and store types/channels. This helps identify high-performing locations, underperforming stores and potential operational differences across store types and regions.
 
 ## ⚠️ Data Assumptions & Limitations
 The report and Measures includes several assumptions that should be considered when interpreting the results
 
  * **Dates -** The <ins>Fact Tables</ins> were originally dated in 1997 and 1998. Dates were shifted forward to create a *2024-2025* analytical period. Dates on <ins>Dimension Tables</ins> were also adjusted where necessary to align them with the analysis period.
- * **Transaction Definition -** The transaction table does not contain a transaction/order ID. Therefore, transaction lines made by the same customer on the same date are assumed to be one transaction for the purpose of transaction-based analysis.
+ * **Transactions ID -** Transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction.
+ * **Product Categories -** The dataset does not provide a formal product category hierachy. Product subcategories is created by extracting keywords from each product name and then looking up its corresponding categories on the mapping list
+ * No transaction or return data exists for All <ins>Mexico</ins> and <ins>Canada</ins> regions in 2024. Therefore, some YoY growth rate and comparisons may be distorted and should be interpreted with caution.
  * **Returns -** The returns table does not contain a transaction/order ID or customer ID. Therefore, each return records cannot be directly linked back to the original customer purchase. Returns are then analysed at the available date, product and store level. In addition, as there are no information for how to deal with each return, all returned products are assumed to be back to inventory and make available for resale. No additional adjustment or analysis is made for damaged, defective, or unsellable returned products. 
  * **Customer Lifecycle -** The available customer data does not provide the information of newly registered customers during the analysis period. Therefore, the analysis focuses on observed customer activity and reactivation rather than attempting to calculate a complete new-customer acquisition funnel.
- * **Product Categories -** The dataset does not provide a formal product category hierachy. Brand is therefore used as the primary product segmentation, with further analysis at product SKU level.
  * **Product Pricing -** The analysis primarily uses the available retail price information. A more complete pricing dataset containing actual transaction prices, promotions and discounts would enable more detailed price-volume-mis and promotion effectiveness analysis.
 
 ## 💡 Project Insights
+ * **Regions:**
+   - Sales trend shows only USA stores attended Nov25 Sales Promotion/Boost event (better performance - Higher MoM and YoY growth compared to previous months and year), while Sales in other regions wasn't shown an identifiable growth in November 2025.
  * **Customers:**
+   - *The customer base* is primarily driven by lower-income, childless consumers; however, their product preferences show no discernible pattern or clear trends
    - *Low income* customers (~55%) contributing more sales than customers in other income groups.
    - More Customers with *Bronze* membership (~55%) were buying products between 2024 and 2025. Customers who buying products with *Normal* membership occupied a larger portion in Low income group (~40%) than other groups (Medium 4.88% High 4.37%), while the largest portion of customers in Low income group buying products is with *Bronze* membership.
    - Customers with no children (60%+) at home are more likely to buy products compared to those with children.
