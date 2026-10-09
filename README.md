@@ -12,21 +12,23 @@ The report combines financial and commercial analysis with the objective of movi
 The report was developed to help managers answer 4 key questions:
 
 ***1. How is the business performing?***
- * How are sales performing across different time periods, regions and store channels?
- * How does current performance compare with the same period last year?
+ * How are sales performing across different time periods, product categories, regions and store channels?
+ * How does current performance compare with the prior period (year/quarter/month) and the same period last year?
+ * How does sales performance change across YoY, QoQ and MoM periods?
  * How are gross margin and return rate changing?
  * What are the key drivers behind sales growth/decline?
  * Which store channels and product categories contribute the most to overall sales?
- * How does sales performance change across YoY, QoQ and MoM periods?
  * What is the sales performing expected to be in the next 3 periods?
 
 **2. What drives customer behaviour?***
  * Who are the most valuable and most active customers?
- * How many customers actively making transactions?
+ * How many customers actively making transactions in each quarter/month/week/day?
  * How many customers have returned after being inactive 90+days?
  * What proportion of customers make repeat purchases across different time period?
+ * How does Average Order Value and Number of daily transactions change alongside customers during weekday and weekend?
  * Is customer engagement improving or deteriorating?
- * How does Average Order Value change alongside customer and transaction growth during weekday and weekend?
+ * Does each customers group have a specific identifiable product preferences?
+ * How much did each customer RFM segment spend, how many orders they placed, and how many customers making purchases during the selected period?
 
 ***3. Where are the commercial opportunities and risks?***
  * Which kind of products contribute the most and at the same time move fast?
