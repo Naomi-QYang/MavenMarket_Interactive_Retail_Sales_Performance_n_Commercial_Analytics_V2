@@ -35,7 +35,8 @@ The report was developed to help managers answer 4 key questions:
  * Which kind of products are growing/decling?
  * How many product SKUs is actively selling, compared with the number of products SKUs lost sale, across different time periods?
  * Which products have higher return rates while low sales?
- * Which product SKUs/Categories are frequently purchased together? And which product combinations have the strongest affinity?
+ * Which product SKUs/Categories are frequently purchased together? And which product combinations have the strongest affinity? Understand what drives product sales, prioritise categories with the greatest commercial impact and uncover cross-selling opportunities through category-level purchase associations.
+ * What is the root cause on the performance improving or declining across regions, store types, product categories by breaking down the selected measure - Sales Revenue/Sold quantities/Returned quantities
 
 ## 🛠️ Key Techniques
 The report was built by using the following tools and technologies:
@@ -48,14 +49,15 @@ The report was built by using the following tools and technologies:
    - 🧐*Report Interactions* - an interactive analytical experience with drill-through, cross-visual interactions, bookmarks and page nagvigation
 
  * 🕵️ **Key Analytical Methods:**
-   - 🏆*Top/Bottom N Analysis* - identify highes/lowest performing stores, products or categories
-   - 📅*Time Intelligence* - analyse business growth trends to support performance evaluation and decision-making. It allows users to switch between Year, Quarter and Month on the <ins>Executive Dashboard</ins> page, and between Last 8 Quarters (quarter granular), Last 12 Months (month granular), Last 13 Weeks (week granular) and Last 30 Days (day granular) on the detailed <ins>Customers, Products and Stores</ins> pages.
-   - ⚖️*Pareto Analysis* - identify product categories/store types that drive the majority of sales (opportunity) / returns (risks), supporting more targeted resource allocation and performance management
-   - ✨*BCG-Style Matrix* - identify products that are strong performers, stable revenue contributors, growth opportunities or potential underperformers, by <ins>Growth Rate X Sales Contribution</ins> with a percentile slicer to control the classification boundaries interactively
-   - 🛍️*Basket Analysis* - analyse product affinity and co-purchase behaviour to identify potential cross-selling opportunities and support sales strategies planning
+   - 🏆*Top/Bottom N Analysis* - identifies highes/lowest performing stores, products or categories
+   - 📅*Time Intelligence* - analyses business growth trends to support performance evaluation and decision-making. It allows users to switch between Year, Quarter and Month on the <ins>Executive Dashboard</ins> page, and between Last 8 Quarters (quarter granular), Last 12 Months (month granular), Last 13 Weeks (week granular) and Last 30 Days (day granular) on the detailed <ins>Customers, Products and Stores</ins> pages.
+   - ⚖️*Pareto Analysis* - identifies product categories/store types that drive the majority of sales (opportunity) / returns (risks), supporting more targeted resource allocation and performance management, by evaluating cumulative sales contribution to identify the product categories/store types that account for the largest share of revenue
+   - ✨*BCG-Style Matrix* - identifies products that are strong performers, stable revenue contributors, growth opportunities or potential underperformers, by <ins>Growth Rate X Sales Contribution</ins> with a percentile slicer to control the classification boundaries interactively
+   - 🛍️*Basket Analysis* - analyses product affinity and co-purchase behaviour to identify potential cross-selling opportunities and supports sales strategies planning
+   - 🎨*RFM Analysis* - segments customers based on their purchasing behaviour/the available 2yrs transaction history, which evaluates **R**ecency (how recently a customer made a purchase), **F**requency (how often a customer made a purchase), **M**onetary (how much did a customer spent in total), and then helps create really effective marketing efforts
 
 ## 💾 Data Source
-This data is from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the US, including daily transactions data and returns data, details on their 10,281 customers, 1,560 products and 24 stores.
+This data is from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the US, including daily transactions data and returns data, details on their <ins>269,720</ins> Transaction lines, <ins>7,087</ins> Return lines, <ins>10,281</ins> Customers, <ins>1,560</ins> Product SKUs, <ins>24</ins> Stores and <ins>7</ins> Regions.
 
 <a href="https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/?couponCode=26BBPAA2MX"> Data Source </a>
 
@@ -63,15 +65,16 @@ This data is from Maven Market, a multi-national grocery chain with locations in
 The original data of Transaction and Returns covers the period from *<ins> 1 January 1997 </ins>* to *<ins> 31 December 1998 </ins>*. The date fields is shifted and extended to cover from *<ins> 1 January 2024 </ins>* to *<ins> 31 December 2025 </ins>* across fact and dimension tables to align the dataset with the current reporting period and enable realistic relative-date calculations.
 
 * **Transaction Definition:**
-The transaction table does not contain a transaction/order ID. A order ID is created on each transaction line in the format of "**C**[5 digits Customer ID]**S**[2 digits Store ID]**D**[8 digits date in DDMMYYYY]". Therefore, transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction for the purpose of transaction-based analysis.
+The transaction table does not contain a transaction/order ID. A order ID is created on each transaction line in the format of "**C**[5 digits Customer ID]**S**[2 digits Store ID]**D**[8 digits date in DDMMYYYY]". Therefore, transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction for the purpose of transaction-based analysis. This transformation process aggregates the <ins>270k</ins> transaction rows into <ins>58,381</ins> order-level rows.
 
 * **Product Categorisation:**
 The original product data does not contain product category information. A product hierarchy was therefore created by:
-  - Extracting product names from the full product name by removing the product brand to consolidate 1,560 unique product full names into 311 unique product names
+  - Extracting product names from the full product name by removing the product brand
   - Creating a new table via Power Query with 311 distinct product names
-  - Manually creating a mapping list with keywords and the according product subcategory
-  - Assigning each product name to its relative subcategory according to the mapping list
+  - Manually creating a mapping rule with keywords and the according product subcategory
+  - Assigning each product name to its relative subcategory according to the mapping rule
   - Grouping subcategories into main categories
+This transformation process consolidates <ins>1,560</ins> product SKUs into <ins>311</ins> product name after removing product brand, and then into <ins>54</ins> product sub-categories, and into <ins>8</ins> product main categories at the highest level.
 
 ## 📊 Report Structure
  * **Executive Summary:** intentionally designed as the entry point into the detailed analysis page. The objective is designed to help decision-makers quickly identify <ins>what happened</ins> and <ins>where did it happen</ins>.
@@ -79,8 +82,8 @@ The original product data does not contain product category information. A produ
    - *Sales Performance* - provides a detailed-level sales performance movement over year/quarter/month
  * **Customers Analytics:** focuses on customer activity, engagement and lifetime value. One of the key analytical areas is to identify inactive, one-off reactivated, successfully reactivated and dormant customers by using a 90-day customer activity framework. This enables the report to move beyond simple customer counts and investigate customer retention and re-engagement opportunities.
  * **Product Performance:** supports dynamic time-period analysis using selectable time granularities and rolling periods.
-   - *Trend* - analyses the performance on each product SKUs and product categories from both sales and profitability perspectives, and classifies product categories/brands into ⭐**Star**, 🐄 **Cash Cow**, ❓ **Question Mark** and 🐕 **Dog** which driven by Sales contribution, Growth Rate and user-selected percentile thresholds. This allows users to explore how the product portfolio changes under different assumptions.
-   - *Comparison* - compare performance against same period last year, product categories, and combination of each set of product categories
+   - *Classification* - classifies product categories/brands into ⭐**Star**, 🐄 **Cash Cow**, ❓ **Question Mark** and 🐕 **Dog** which driven by Sales contribution, Growth Rate and user-selected percentile thresholds, with analysing the performance changes across different time periods. This allows users to explore how the product portfolio changes under different assumptions.
+   - *Drivers* - identify the key drivers of product performance, pinpoint high-impact main categories and investigate cross-category purchasing relathionships to support sales growth and product strategy
    - *Basket Analysis* - analyses product subcategories/main categories frequently purchased together to identify potential product associations, which can be used to identify potential opportunities for cross-selling, product bundling and promotional planning.
  *  **Store Performance:** evaluates performance across individual stores, regions and store types/channels. This helps identify high-performing locations, underperforming stores and potential operational differences across store types and regions.
 
@@ -89,7 +92,7 @@ The report and Measures includes several assumptions that should be considered w
 
  * **Dates -** The <ins>Fact Tables</ins> were originally dated in 1997 and 1998. Dates were shifted forward to create a *2024-2025* analytical period. Dates on <ins>Dimension Tables</ins> were also adjusted where necessary to align them with the analysis period.
  * **Transactions ID -** Transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction.
- * **Product Categories -** The dataset does not provide a formal product category hierachy. Product subcategories is created by extracting keywords from each product name and then looking up its corresponding categories on the mapping list
+ * **Product Categories -** The dataset does not provide a formal product category hierachy. Product subcategories is created by extracting keywords from each product name and then looking up its corresponding categories on the mapping rule list which the rule can be edited easily on the table of <ins>SubCategories Mapping</ins> and <ins>MainCategories Mapping</ins> on the window of Power Query. But it would be much better to maintain and exported a product categories table with category id and the name of sub-category and main category
  * No transaction or return data exists for All <ins>Mexico</ins> and <ins>Canada</ins> regions in 2024. Therefore, some YoY growth rate and comparisons may be distorted and should be interpreted with caution.
  * **Returns -** The returns table does not contain a transaction/order ID or customer ID. Therefore, each return records cannot be directly linked back to the original customer purchase. Returns are then analysed at the available date, product and store level. In addition, as there are no information for how to deal with each return, all returned products are assumed to be back to inventory and make available for resale. No additional adjustment or analysis is made for damaged, defective, or unsellable returned products. 
  * **Customer Lifecycle -** The available customer data does not provide the information of newly registered customers during the analysis period. Therefore, the analysis focuses on observed customer activity and reactivation rather than attempting to calculate a complete new-customer acquisition funnel.
