@@ -65,7 +65,7 @@ This data is from Maven Market, a multi-national grocery chain with locations in
 The original data of Transaction and Returns covers the period from *<ins> 1 January 1997 </ins>* to *<ins> 31 December 1998 </ins>*. The date fields is shifted and extended to cover from *<ins> 1 January 2024 </ins>* to *<ins> 31 December 2025 </ins>* across fact and dimension tables to align the dataset with the current reporting period and enable realistic relative-date calculations.
 
 * **Transaction Definition:**
-The transaction table does not contain a transaction/order ID. A order ID is created on each transaction line in the format of "**C**[5 digits Customer ID]**S**[2 digits Store ID]**D**[8 digits date in DDMMYYYY]". Therefore, transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction for the purpose of transaction-based analysis. This transformation process aggregates the <ins>270k</ins> transaction rows into <ins>58,381</ins> order-level rows.
+The transaction table does not contain a transaction/order ID. A order ID is created on each transaction line in the format of "<ins>C</ins>[5 digits Customer ID]<ins>S</ins>[2 digits Store ID]<ins>D</ins>[8 digits date in DDMMYYYY]". Therefore, transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction for the purpose of transaction-based analysis. This transformation process aggregates the <ins>270k</ins> transaction rows into <ins>58,381</ins> order-level rows.
 
 * **Product Categorisation:**
 The original product data does not contain product category information. A product hierarchy was therefore created by:
