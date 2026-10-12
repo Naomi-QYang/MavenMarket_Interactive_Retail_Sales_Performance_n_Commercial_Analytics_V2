@@ -135,17 +135,31 @@ The report and Measures includes several assumptions that should be considered w
    - The 4 highest-volume product subcategories (*Canned & Packet*, *Vegetables*, *Jams & Spreads*, *Fruits*) dominate the confidence rankings, while combinations with higher lift tend to have confidence below 10%. This suggests that frequent co-purchases are concentrated around popular categories, whereas more distinctive associations occur less frequently. This suggests that distinctive cross-category purchasing patterns may be less prevalent in the observed grocery transactions, although further analysis at more transactions and across time windows is needed to validate this finding.
 
  * **Stores:**
-   - North West Region (48%) contributed the most sales revenue in the analytical period, while received the most return requests (47%).
+   - *North West* Region (USA) leads in both Sales and Returns, while its return rate remains comparable to other regions at around 1%. Despite its leading sales performance, North West's average order value (AOV) of $29.47 during the last 12 months is only slightly above South West (USA)'s $28.55 and below Mexico's regional AOV which ranged between $29.08 and $37.42.
+   - Notably, *Mexico Central* ranks second in Sales despite having fewer customers than North West (1st) and South West (3rd) during the last 12 months, highlighting stronger sales value per order as a potential contributore to its performance.
    - *Supermarket* and *Deluxe Supermarket* is contributing the most sales revenue (80%+) in the analytical period, highlighting these formats as key revenue drivers and potential areas of focus for future business planning.
 
 ## 🙌Recommendations
- * **South West** Region experienced declining Sales and Customers number, accompanied by an increasing return rate.
-   - Engage with locat store managers an analyse customer feedback, returns and product-level sales to identify potential drivers such as service issues, product dissatisfaction or product availability.
+ * **South West** Region experienced a year-over-year decline in customer numbers in majority months of 2025, with 29% of customers classified as Hibernating Customers (Static RFM segmentation as at 31 Dec 2025). Hibernating customers recorded approximately 40% higher average daily order quantities on weekend than on weekdays during June and July 25, while weekend averages were about twice weekday levels during the first week of November. Meanwhile, about 34% of Cheese SKUs sold in November 25 recorded no sales in December 25, highlighting potential customer retention and product continuity concerns that need further investigation.
+   - Engage with locat store managers and analyse customer feedback, returns and product-level sales to investigate customer attrition drivers such as service issues, product dissatisfaction or product availability.
+   - Review Cheese SKUs with no December sales to identify potential stock availability, demand or product assortment issues.
    - Address identified service or operational issues and reassess product assorment to better align with customer demand.
+   - Test targeted weekend re-engagement campaigns if the observed pattern persists to validate weekend engagement opportunities.
    - Track customer retention, sales recovery and return rate to evaluate the effectiveness of the actions.
+
  * **CDR Grape Jelly** recorded no sales or returns during the analysis period, indicating a potential product availability, listing, or demand issue that needs further investigation.
    - Investigate whether the product is actively stocked and available for sale, to determine whether lacks of transactions reflects limited availability, discontinued status, data issues or weak customer demand, before assessing underlying customer demand.
    - If the product has been discontinued, coordinate with the <ins>IT</ins>/<ins>Data</ins> team to deactivate it in the product master data, for maintaining data integrity and prevent discontinued products from distorting active product and assortment analysis.
    - If the product is available but consistently generates no sales, reassess its relevance to customer demand, promotion plans to accelerate the sale before the expired date, and future sales plans on its pricing, positioning or product assortment.
- * No transaction & return data in 2024 was observed for All **Mexico (central, south, east)** regions and **Canada West** region, despite the relevant stores having been opened or remodelled before 2024. This suggests a potential data completeness issue that should be investigated before drawing conclusions about yealy business performance.
+
+ * **No transaction & return** data in 2024 was observed for All **Mexico (central, south, east)** regions and **Canada West** region, despite the relevant stores having been opened or remodelled before 2024. This suggests a potential data completeness issue that should be investigated before drawing conclusions about yealy business performance.
    - Escalate the issue to the <ins>IT</ins>/<ins>Data</ins> team to validate the 2024 transaction & return data pipeline
+
+ * Only **Retail Price** is provided for each product SKUs rather than transaction-level selling prices. In addition, some listed prices appear counterintuitive across product types, and their historical accuracy cannot be verified from the available data.
+   - Engage with Data/IT team to establish access to transaction-level selling prices, including applicable discounts and promotions
+   - Engage Finance, Commercial/Pricing and Data/IT teams to validate product prices against historical pricing records or other reliable reference data, where available, before drawing conclusions from price-based comparisons
+   - Re-write the DAX for revenue-related calculations using validated pricing data and reassess revenue-based metrics and product classifications to improve the reliability of commercial insights
+
+ * If analysis on **Periodic RFM segmentation** movement is required:
+   - Create a table of monthly customer-level RFM snapshots to monitor segment migration, to identify emerging churn risks and support targeted retention strategies.
+   - Pre-calculating RFM metrics in SQL, Data Warehouse can reduce repeated DAX calculations and improve report performance.
