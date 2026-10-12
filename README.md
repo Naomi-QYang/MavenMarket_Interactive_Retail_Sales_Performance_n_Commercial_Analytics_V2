@@ -41,24 +41,24 @@ The report was developed to help managers answer 4 key questions:
 ## 🛠️ Key Techniques
 The report was built by using the following tools and technologies:
  * 💭 **Power BI Desktop:** Main business intelligence platform used for report creation which includes connecting, modelling, aggregating and visualising data
-   - 🔍*Power Query* - Data transformation and cleaning process for extracting, cleaning and shaping data to prepare it for modeling and analysis
-   - 🔗*Data Modeling* - Relationships established among fact tables (transactions and returns) and dimension tables (calendar, customers, products, stores and regions) to enable cross-filtering and accurate calculation
-   - 🗒️*Calculated Column* + *Calculated Table* - extend the data model and create additional analytical dimensions that support business-specific reporting requirements
-   - 🧠*Data Analysis Expressions (DAX)* + *Visual Calculations* - used for creating supporting tables, grouping and aggregating data, dynamic visuals and conditional logic
-   - ⚙️*Parameters* - let users to dynamically update measures inputs to see the impact on a visual or change the metrics/dimensions shown in a visual
-   - 📈*Tooltips* - hiddden custom information to be shown against the hovered product name
-   - 🧐*Report Interactions* - an interactive analytical experience with drill-through, cross-visual interactions, bookmarks and page nagvigation
+   - 🔍*Power Query* - Data transformation and cleaning process for extracting, cleaning and shaping data to prepare it for modeling and analysis.
+   - 🔗*Data Modeling* - Relationships established among fact tables (transactions and returns) and dimension tables (calendar, customers, products, stores and regions) to enable cross-filtering and accurate calculation.
+   - 🗒️*Calculated Column* + *Calculated Table* - extend the data model and create additional analytical dimensions that support business-specific reporting requirements.
+   - 🧠*Data Analysis Expressions (DAX)* + *Visual Calculations* - used for creating supporting tables, grouping and aggregating data, dynamic visuals and conditional logic.
+   - ⚙️*Parameters* - let users to dynamically update measures inputs to see the impact on a visual or change the metrics/dimensions shown in a visual.
+   - 📈*Tooltips* - hiddden custom information to be shown against the hovered product name.
+   - 🧐*Report Interactions* - an interactive analytical experience with drill-through, cross-visual interactions, bookmarks and page nagvigation.
 
  * 🕵️ **Key Analytical Methods:**
-   - 🏆*Top/Bottom N Analysis* - identifies highes/lowest performing stores, products or categories
+   - 🏆*Top/Bottom N Analysis* - identifies highes/lowest performing stores, products or categories.
    - 📅*Time Intelligence* - analyses business growth trends to support performance evaluation and decision-making. It allows users to switch between Year, Quarter and Month on the <ins>Executive Dashboard</ins> page, and between Last 8 Quarters (quarter granular), Last 12 Months (month granular), Last 13 Weeks (week granular) and Last 30 Days (day granular) on the detailed <ins>Customers, Products and Stores</ins> pages.
-   - ⚖️*Pareto Analysis* - identifies product categories/store types that drive the majority of sales (opportunity) / returns (risks), supporting more targeted resource allocation and performance management, by evaluating cumulative sales contribution to identify the product categories/store types that account for the largest share of revenue
-   - ✨*BCG-Style Matrix* - identifies products that are strong performers, stable revenue contributors, growth opportunities or potential underperformers, by <ins>Growth Rate X Sales Contribution</ins> with a percentile slicer to control the classification boundaries interactively
-   - 🛍️*Basket Analysis* - analyses product affinity and co-purchase behaviour to identify potential cross-selling opportunities and supports sales strategies planning
-   - 🎨*RFM Analysis* - segments customers based on their purchasing behaviour/the available 2yrs transaction history, which evaluates **R**ecency (how recently a customer made a purchase), **F**requency (how often a customer made a purchase), **M**onetary (how much did a customer spent in total), and then helps create really effective marketing efforts
+   - 🎨*RFM Analysis* - segments customers based on their purchasing behaviour/the available 2yrs transaction history, which evaluates **R**ecency (how recently a customer made a purchase), **F**requency (how often a customer made a purchase), **M**onetary (how much did a customer spent in total), and then helps create really effective marketing efforts.
+   - ⚖️*Pareto Analysis* - identifies product categories/store types that drive the majority of sales (opportunity) / returns (risks), supporting more targeted resource allocation and performance management, by evaluating cumulative sales contribution to identify the product categories/store types that account for the largest share of revenue.
+   - ✨*BCG-Style Matrix* - identifies products that are strong performers, stable revenue contributors, growth opportunities or potential underperformers, by <ins>Growth Rate X Sales Contribution</ins> with a percentile slicer to control the classification boundaries interactively.
+   - 🛍️*Basket Analysis* - analyses product affinity and co-purchase behaviour to identify potential cross-selling opportunities and supports sales strategies planning.
 
 ## 💾 Data Source
-This data is from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the US, including daily transactions data and returns data, details on their *269,720* Transaction lines,*7,087* Return lines, *10,281* Customers, *1,560* Product SKUs, *24* Stores and *7* Regions.
+This data is from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the US, including daily transactions data and returns data, details on their *269,720* Transaction lines, *7,087* Return lines, *10,281* Customers, *1,560* Product SKUs, *24* Stores and *7* Regions.
 
 <a href="https://www.udemy.com/course/microsoft-power-bi-up-running-with-power-bi-desktop/?couponCode=26BBPAA2MX"> Data Source </a>
 
