@@ -1,5 +1,5 @@
 # Maven Market Interactive Retail Sales Performance and Commercial Analytics
-A Power BI analytics project analysing *sales performance, customer behaviour, product profitability and store performance* for a multi-national grocery retailer with stores across Canada, Mexico and the US.
+A Power BI analytics project analysing *sales performance, customer behaviour, product and store performance* for a multi-national grocery retailer with stores across Canada, Mexico and the US.
 
 ⛏️**Tools:** Power BI | DAX & Visual Calculation | Power Query | Data Modelling | Time Intelligence | Business Analysis
 
