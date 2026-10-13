@@ -99,21 +99,25 @@ The report and Measures includes several assumptions that should be considered w
 
  * **Transactions ID -** Transaction lines made by the same customer at the same store on the same date are assumed to be in the same transaction.
 
+ * **Customer Lifecycle -** The available customer data does not provide the information of newly registered customers during the analysis period. Therefore, the analysis focuses on observed customer activity and reactivation rather than attempting to calculate a complete new-customer acquisition funnel.
+
+ * **RFM segmentation -** is based on the 2-year transaction window ending on the dataset's lastest transaction date. Given the limited observation period and generally low RFM values, a shorter window is not adopted to avoid further limiting the available purchasing history. The static observation window also limits the ability to track changes in customers segments over time. The resulting classifications should therefore be interpreted as a snapshot of observed customer behaviour, rather than a measure of segment migration, long-term loyalty or lifetime customer value.
+   
+ * **Product BCG classification -** is based on products' sales contribution and growth rate over the entire selected time window.
+
  * **Product Categories -** The dataset does not provide a formal product category hierachy. Product subcategories is created by extracting keywords from each product name and then looking up its corresponding categories on the mapping rule list which the rule can be edited easily on the table of <ins>SubCategories Mapping</ins> and <ins>MainCategories Mapping</ins> on the window of Power Query. But it would be much better and highly recommended to maintain and imported a separate product categories table with category id and the name of sub-category and main category.
 
  * **Standard Product Price -** the dataset only provides a standard retail price for each product but does not include the actual selling price for each transaction lines. *Sales Revenue* is therefore estimated using the standard retail price (on Products Table) multiplied by the quantity sold (on Transactions data), rather than actual transaction-level revenue. This limitation may affect the accuracy of revenue, gross profit, gross margin, ROI and revenue-based growth analysis (which follows the Quantities Sold movement or remains at the similar level on the report), particularly when discounts, promotions or historical price changes are involved. It may also influence performance assessment on products, channel and stores, BCG classification, RFM segmentation and Pareto analysis.
 
  * **Price Plausibility -** the standard retail prices are relatively concentrated within a narrow range of $0.50-$3.98, with some prices appearing counterintuitive across product types (e.g. Steady Silky Smooth Hair Conditioner at $1.45 versus Washington Orange Juice at $2.59), even though the original data covers between 1997 and 1998. Although these differences may not neccessarily indicate data errors, the pricing data may not fully reflect realistic market price variations across product categories. Consequently, price-sensitive analyses, including product price comparisons, revenue estimation and price optimisation, should be interpreted with caution. More representative product pricing data and historical transaction-level prices would be required to validate pricing assumptions and support reliable commercial decisions.
 
+ * **Product Cost -** assumed to represent the full cost attributable to each product, including procurement, logistics, warehousing and other relevant product-related costs. This is a modelling assumption rather than a verified reflection of the retailer's actual cost structure, as detailed cost-component data was not available in the dataset.
+
+ * **Store Operating Cost -** The dataset does not include store-level operating expenses such as labour, rent, utilities and other store overheads. Store performance analysis therefore focuses on sales, order value, customer activity, returns and product-related performance rather than full store profitability. Without store-level operating cost data and an appropriate cost allocation methodology, the report cannot reliably determine each store's operating profit or overall profitability.
+
  * **No transaction or return data** exists for All <ins>Mexico</ins> and <ins>Canada</ins> regions in 2024. Therefore, trend prediction, YoY growth rate and comparisons for those regions may be distorted and should be interpreted with caution.
 
  * **Returns -** The returns table does not contain a transaction/order ID or customer ID. Therefore, each return records cannot be directly linked back to the original customer purchase. Returns are then analysed at the available date, product and store level. In addition, as there are no information for how to deal with each return, all returned products are assumed to be back to inventory and make available for resale. No additional adjustment or analysis is made for damaged, defective, or unsellable returned products.
-
- * **Customer Lifecycle -** The available customer data does not provide the information of newly registered customers during the analysis period. Therefore, the analysis focuses on observed customer activity and reactivation rather than attempting to calculate a complete new-customer acquisition funnel.
-
- * **RFM segmentation -** is based on the 2-year transaction window ending on the dataset's lastest transaction date. Given the limited observation period and generally low RFM values, a shorter window is not adopted to avoid further limiting the available purchasing history. The static observation window also limits the ability to track changes in customers segments over time. The resulting classifications should therefore be interpreted as a snapshot of observed customer behaviour, rather than a measure of segment migration, long-term loyalty or lifetime customer value.
-   
- * **Product BCG classification -** is based on products' sales contribution and growth rate over the entire selected time window.
 
 ## 💡 Project Insights
  * **Regions:**
@@ -160,6 +164,14 @@ The report and Measures includes several assumptions that should be considered w
    - Engage Finance, Commercial/Pricing and Data/IT teams to validate product prices against historical pricing records or other reliable reference data, where available, before drawing conclusions from price-based comparisons
    - Re-write the DAX for revenue-related calculations using validated pricing data and reassess revenue-based metrics and product classifications to improve the reliability of commercial insights
 
- * If analysis on **Periodic RFM segmentation** movement is required:
+ * **Future Enhancements - Product Profitability :**
+   - Obtain validated product-level cost data over time, including procurement costs and relevant logistics and warehousing costs, or clear definitions of which cost components are included in Cost of Goods Sold, with a column of product cost ID to distinguish which product at what time the cost is for.
+   - This would enable more reliable product-level gross profit and gross margin analysis, helping identify products that contribute the most to profit rather than sales revenue alone.
+
+ * **Future Enhancements - Store Financial Performance :**
+   - Integrate store-level operating expense data, including labour, rent, utilities and other relevant overheads, together with a consistent cost allocation methodology for shared expenses where necessary.
+   - This would enable a more comprehensive assessment of store financial performance, help distinguish stores with high sales from those that generate stronger financial returns and support more informed decisions on cost control, resource allocation and store performance improvement.
+
+ * **Future Enhancements - Periodic RFM segmentation movements :**
    - Create a table of monthly customer-level RFM snapshots to monitor segment migration, to identify emerging churn risks and support targeted retention strategies.
    - Pre-calculating RFM metrics in SQL, Data Warehouse can reduce repeated DAX calculations and improve report performance.
