@@ -20,19 +20,19 @@ The report was developed to help managers answer 3 key questions:
  * Which store channels and product categories contribute the most to overall sales?
  * What is the sales performing expected to be in the next 3 periods?
 
-***2. What drives customer behaviour?***
+***2. What drives customer behaviour and Product Sales?***
  * Who are the most valuable and most active customers?
  * How many customers actively making transactions in each quarter/month/week/day?
  * How many customers have returned after being inactive 90+days?
  * What proportion of customers make repeat purchases across different time period?
  * How does Average Order Value and Number of daily transactions change alongside customers during weekday and weekend?
+ * Which kind of products contribute the most and at the same time move fast?
+ * Which kind of products are growing/declining?
+
+***3. Where are the commercial opportunities and risks?***
  * Is customer engagement improving or deteriorating?
  * Does each customers group have a specific identifiable product preferences?
  * How much did each customer RFM segment spend, how many orders they placed per day/per customer, and how many customers making purchases during the selected period?
-
-***3. Where are the commercial opportunities and risks?***
- * Which kind of products contribute the most and at the same time move fast?
- * Which kind of products are growing/declining?
  * How many product SKUs is actively selling, compared with the number of products SKUs lost sale, across different time periods?
  * Which products have higher return rates while low sales?
  * Which product SKUs/Categories are frequently purchased together? And which product combinations have the strongest affinity? Understand what drives product sales, prioritise categories with the greatest commercial impact and uncover cross-selling opportunities through category-level purchase associations.
