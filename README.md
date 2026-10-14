@@ -28,7 +28,7 @@ The report was developed to help managers answer 3 key questions:
  * How does Average Order Value and Number of daily transactions change alongside customers during weekday and weekend?
  * Is customer engagement improving or deteriorating?
  * Does each customers group have a specific identifiable product preferences?
- * How much did each customer RFM segment spend, how many orders they placed, and how many customers making purchases during the selected period?
+ * How much did each customer RFM segment spend, how many orders they placed per day/per customer, and how many customers making purchases during the selected period?
 
 ***3. Where are the commercial opportunities and risks?***
  * Which kind of products contribute the most and at the same time move fast?
