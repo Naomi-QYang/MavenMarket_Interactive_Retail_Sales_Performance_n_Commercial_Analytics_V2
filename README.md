@@ -9,7 +9,7 @@ This project is built on the Maven Market grocery retail dataset, designed to de
 The report combines financial and commercial analysis with the objective of moving beyond descriptive reporting to identify the key drivers behind changes in *Sales, Customer behaviour, Products and Stores Performance* and to support *data-driven* decision making. It allows users to move from an executive-level view into detailed store, product and customer analysis through interactive slicers, dynamic measures and drill-through functionality.
 
 ## 🎯 Business Objectives
-The report was developed to help managers answer 4 key questions:
+The report was developed to help managers answer 3 key questions:
 
 ***1. How is the business performing?***
  * How are sales performing across different time periods, product categories, regions and store channels?
