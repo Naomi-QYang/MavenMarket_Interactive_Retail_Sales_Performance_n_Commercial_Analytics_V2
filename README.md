@@ -101,7 +101,7 @@ The report and Measures includes several assumptions that should be considered w
 
  * **Customer Lifecycle -** The available customer data does not provide the information of newly registered customers during the analysis period. Therefore, the analysis focuses on observed customer activity and reactivation rather than attempting to calculate a complete new-customer acquisition funnel.
 
- * **RFM segmentation -** is based on the 2-year transaction window ending on the dataset's latest transaction date. Given the limited observation period and generally low RFM values, a shorter window is not adopted to avoid further limiting the available purchasing history. The static observation window also limits the ability to track changes in customers segments over time. The resulting classifications should therefore be interpreted as a snapshot of observed customer behaviour, rather than a measure of segment migration, long-term loyalty or lifetime customer value.
+ * **RFM segmentation -** is based on the 2-year transaction window ending on the dataset's latest transaction date, by using 20th, 40th, 60th and 80th percentile as scoring thresholds. Given the limited observation period and generally low RFM values, a shorter window is not adopted to avoid further limiting the available purchasing history. The static observation window also limits the ability to track changes in customers segments over time. The resulting classifications should therefore be interpreted as a snapshot of observed customer behaviour, rather than a measure of segment migration, long-term loyalty or lifetime customer value.
    
  * **Product BCG classification -** is based on products' sales contribution and growth rate over the entire selected time window.
 
@@ -171,6 +171,8 @@ The report and Measures includes several assumptions that should be considered w
  * **Future Enhancements - Store Financial Performance :**
    - Integrate store-level operating expense data, including labour, rent, utilities and other relevant overheads, together with a consistent cost allocation methodology for shared expenses where necessary.
    - This would enable a more comprehensive assessment of store financial performance, help distinguish stores with high sales from those that generate stronger financial returns and support more informed decisions on cost control, resource allocation and store performance improvement.
+
+ * **Future Enhancements - RFM segmentation scoring threshold :** To improve the interpretability and comparability of customer segmentation overtime, future iterations could establish a fixed RFM scoring thresholds, by using a representative baseline period and validating against business requirements, with selected thresholds held constant across subsequent reporting periods.
 
  * **Future Enhancements - Periodic RFM segmentation movements :**
    - Create a table of monthly customer-level RFM snapshots to monitor segment migration, to identify emerging churn risks and support targeted retention strategies.
