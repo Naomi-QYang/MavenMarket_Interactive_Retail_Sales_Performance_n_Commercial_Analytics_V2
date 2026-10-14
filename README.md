@@ -57,6 +57,20 @@ The report was built by using the following tools and technologies:
    - ✨*BCG-Style Matrix* - identifies products that are strong performers, stable revenue contributors, growth opportunities or potential under-performers, by <ins>Growth Rate X Sales Contribution</ins> with a percentile slicer to control the classification boundaries interactively.
    - 🛍️*Basket Analysis* - analyses product affinity and co-purchase behaviour to identify potential cross-selling opportunities and supports sales strategies planning.
 
+## 📊 Report Structure
+ * **Executive Summary:** intentionally designed as the entry point into the detailed analysis page. The objective is designed to help decision-makers quickly identify <ins>what happened</ins> and <ins>where did it happen</ins>.
+   - *Overview* - provides a high-level overview of business performance in the latest period (year/quarter/month)
+   - *Sales Performance* - provides a detailed-level sales performance movement over year/quarter/month
+
+ * **Customers Analytics:** focuses on customer activity, engagement and lifetime value. One of the key analytical areas is to identify inactive, one-off reactivated, successfully reactivated and dormant customers by using a 90-day customer activity framework, and to segment customers based on their *R*ecency, *F*requency, *M*onetary scores. This enables the report to move beyond simple customer counts and investigate customer retention and opportunities for customer growth and re-engagement.
+
+ * **Product Performance:** supports dynamic time-period analysis using selectable time granularities and rolling periods.
+   - *Classification* - classifies product categories/brands into ⭐**Star**, 🐄 **Cash Cow**, ❓ **Question Mark** and 🐕 **Dog** which driven by Sales contribution, Growth Rate and user-selected percentile thresholds, with analysing the performance changes across different time periods. This allows users to explore how the product portfolio changes under different assumptions.
+   - *Drivers* - identify the key drivers of product performance, pinpoint high-impact main categories and investigate cross-category purchasing relationships to support sales growth and product strategy
+   - *Basket Analysis* - analyses product subcategories/main categories frequently purchased together to identify potential product associations, which can be used to identify potential opportunities for cross-selling, product bundling and promotional planning.
+
+ *  **Store Performance:** evaluates performance across individual stores, regions and store types/channels. This helps identify high-performing locations, underperforming stores and potential operational differences across store types and regions.
+
 ## 💾 Data Source
 This data is from Maven Market, a multi-national grocery chain with locations in Canada, Mexico and the US, including daily transactions data and returns data, details on their *269,720* Transaction lines, *7,087* Return lines, *10,281* Customers, *1,560* Product SKUs, *24* Stores and *7* Regions.
 
@@ -77,20 +91,6 @@ The original product data does not contain product category information. A produ
   - Grouping subcategories into main categories
 
    This transformation process consolidates <ins>1,560</ins> product SKUs into <ins>311</ins> product name after removing product brand, and then into <ins>54</ins> product sub-categories, and into <ins>8</ins> product main categories at the highest level.
-
-## 📊 Report Structure
- * **Executive Summary:** intentionally designed as the entry point into the detailed analysis page. The objective is designed to help decision-makers quickly identify <ins>what happened</ins> and <ins>where did it happen</ins>.
-   - *Overview* - provides a high-level overview of business performance in the latest period (year/quarter/month)
-   - *Sales Performance* - provides a detailed-level sales performance movement over year/quarter/month
-
- * **Customers Analytics:** focuses on customer activity, engagement and lifetime value. One of the key analytical areas is to identify inactive, one-off reactivated, successfully reactivated and dormant customers by using a 90-day customer activity framework, and to segment customers based on their *R*ecency, *F*requency, *M*onetary scores. This enables the report to move beyond simple customer counts and investigate customer retention and opportunities for customer growth and re-engagement.
-
- * **Product Performance:** supports dynamic time-period analysis using selectable time granularities and rolling periods.
-   - *Classification* - classifies product categories/brands into ⭐**Star**, 🐄 **Cash Cow**, ❓ **Question Mark** and 🐕 **Dog** which driven by Sales contribution, Growth Rate and user-selected percentile thresholds, with analysing the performance changes across different time periods. This allows users to explore how the product portfolio changes under different assumptions.
-   - *Drivers* - identify the key drivers of product performance, pinpoint high-impact main categories and investigate cross-category purchasing relationships to support sales growth and product strategy
-   - *Basket Analysis* - analyses product subcategories/main categories frequently purchased together to identify potential product associations, which can be used to identify potential opportunities for cross-selling, product bundling and promotional planning.
-
- *  **Store Performance:** evaluates performance across individual stores, regions and store types/channels. This helps identify high-performing locations, underperforming stores and potential operational differences across store types and regions.
 
 ## ⚠️ Data Assumptions & Limitations
 The report and Measures includes several assumptions that should be considered when interpreting the results
