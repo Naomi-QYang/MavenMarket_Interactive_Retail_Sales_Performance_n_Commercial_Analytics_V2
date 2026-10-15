@@ -143,7 +143,7 @@ The report and Measures includes several assumptions that should be considered w
    - Notably, *Mexico Central* ranks second in Sales despite having fewer customers than North West (1st) and South West (3rd) during the last 12 months, highlighting stronger sales value per order as a potential contributors to its performance.
    - *Supermarket* and *Deluxe Supermarket* is contributing the most sales revenue (80%+) in the analytical period, highlighting these formats as key revenue drivers and potential areas of focus for future business planning.
 
-## 🙌Recommendations
+## 🙌 Recommendations
  * **South West** Region experienced a year-over-year decline in customer numbers in majority months of 2025, with 29% of customers classified as Hibernating Customers (Static RFM segmentation as at 31 Dec 2025). Hibernating customers recorded approximately 40% higher average daily order quantities on weekend than on weekdays during June and July 25, while weekend averages were about twice weekday levels during the first week of November. Meanwhile, about 34% of Cheese SKUs sold in November 25 recorded no sales in December 25, highlighting potential customer retention and product continuity concerns that need further investigation.
    - Engage with local store managers and analyse customer feedback, returns and product-level sales to investigate customer attrition drivers such as service issues, product dissatisfaction or product availability.
    - Review Cheese SKUs with no December sales to identify potential stock availability, demand or product assortment issues.
@@ -164,7 +164,7 @@ The report and Measures includes several assumptions that should be considered w
    - Engage Finance, Commercial/Pricing and Data/IT teams to validate product prices against historical pricing records or other reliable reference data, where available, before drawing conclusions from price-based comparisons
    - Re-write the DAX for revenue-related calculations using validated pricing data and reassess revenue-based metrics and product classifications to improve the reliability of commercial insights
 
-## 🚀Future Enhancements
+## 🚀 Future Enhancements
  * **Product Profitability**
    - Obtain validated product-level cost data over time, including procurement costs and relevant logistics and warehousing costs, or clear definitions of which cost components are included in Cost of Goods Sold, with a column of product cost ID to distinguish which product at what time the cost is for.
    - This would enable more reliable product-level gross profit and gross margin analysis, helping identify products that contribute the most to profit rather than sales revenue alone.
