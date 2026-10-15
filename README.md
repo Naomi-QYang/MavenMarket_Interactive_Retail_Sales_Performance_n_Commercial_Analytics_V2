@@ -164,16 +164,17 @@ The report and Measures includes several assumptions that should be considered w
    - Engage Finance, Commercial/Pricing and Data/IT teams to validate product prices against historical pricing records or other reliable reference data, where available, before drawing conclusions from price-based comparisons
    - Re-write the DAX for revenue-related calculations using validated pricing data and reassess revenue-based metrics and product classifications to improve the reliability of commercial insights
 
- * **Future Enhancements - Product Profitability :**
+## 🚀Future Enhancements
+ * **Product Profitability**
    - Obtain validated product-level cost data over time, including procurement costs and relevant logistics and warehousing costs, or clear definitions of which cost components are included in Cost of Goods Sold, with a column of product cost ID to distinguish which product at what time the cost is for.
    - This would enable more reliable product-level gross profit and gross margin analysis, helping identify products that contribute the most to profit rather than sales revenue alone.
 
- * **Future Enhancements - Store Financial Performance :**
+ * **Store Financial Performance**
    - Integrate store-level operating expense data, including labour, rent, utilities and other relevant overheads, together with a consistent cost allocation methodology for shared expenses where necessary.
    - This would enable a more comprehensive assessment of store financial performance, help distinguish stores with high sales from those that generate stronger financial returns and support more informed decisions on cost control, resource allocation and store performance improvement.
 
- * **Future Enhancements - RFM segmentation scoring threshold :** To improve the interpretability and comparability of customer segmentation overtime, future iterations could establish a fixed RFM scoring thresholds, by using a representative baseline period and validating against business requirements, with selected thresholds held constant across subsequent reporting periods.
+ * **RFM segmentation scoring threshold :** To improve the interpretability and comparability of customer segmentation overtime, future iterations could establish a fixed RFM scoring thresholds, by using a representative baseline period and validating against business requirements, with selected thresholds held constant across subsequent reporting periods.
 
- * **Future Enhancements - Periodic RFM segmentation movements :**
+ * **Periodic RFM segmentation movements**
    - Create a table of monthly customer-level RFM snapshots to monitor segment migration, to identify emerging churn risks and support targeted retention strategies.
    - Pre-calculating RFM metrics in SQL, Data Warehouse can reduce repeated DAX calculations and improve report performance.
